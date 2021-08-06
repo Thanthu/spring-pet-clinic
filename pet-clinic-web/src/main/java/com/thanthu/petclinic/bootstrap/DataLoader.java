@@ -1,9 +1,12 @@
 package com.thanthu.petclinic.bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.thanthu.petclinic.model.Owner;
+import com.thanthu.petclinic.model.Pet;
 import com.thanthu.petclinic.model.PetType;
 import com.thanthu.petclinic.model.Vet;
 import com.thanthu.petclinic.services.OwnerService;
@@ -35,14 +38,34 @@ public class DataLoader implements CommandLineRunner {
 		cat = petTypeService.save(cat);
 
 		Owner owner1 = new Owner();
-		owner1.setFirstName("Michael");
-		owner1.setLastName("Weston");
+		owner1.setFirstName("Naruto");
+		owner1.setLastName("Uzumaki");
+		owner1.setAddress("123 House");
+		owner1.setCity("Hidden Leaf");
+		owner1.setTelephone("1234567890");
+
+		Pet narutosPet = new Pet();
+		narutosPet.setName("Kurama");
+		narutosPet.setPetType(dog);
+		narutosPet.setOwner(owner1);
+		narutosPet.setBirthDate(LocalDate.of(2000, 1, 1));
+		owner1.getPets().add(narutosPet);
 
 		ownerService.save(owner1);
 
 		Owner owner2 = new Owner();
-		owner2.setFirstName("Fiona");
-		owner2.setLastName("Glenanne");
+		owner2.setFirstName("Killer");
+		owner2.setLastName("Bee");
+		owner1.setAddress("234 House");
+		owner1.setCity("Hidden Cloud");
+		owner1.setTelephone("9876543210");
+		
+		Pet beesPet = new Pet();
+		beesPet.setName("Eight Tails");
+		beesPet.setPetType(cat);
+		beesPet.setOwner(owner2);
+		beesPet.setBirthDate(LocalDate.of(1970, 1, 1));
+		owner2.getPets().add(beesPet);
 
 		ownerService.save(owner2);
 

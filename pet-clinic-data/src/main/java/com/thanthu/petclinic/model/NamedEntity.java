@@ -1,7 +1,7 @@
 package com.thanthu.petclinic.model;
 
-public class PetType extends NamedEntity {
-	
+public class NamedEntity extends BaseEntity {
+
 	private String name;
 
 	public String getName() {
@@ -11,5 +11,5 @@ public class PetType extends NamedEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 }
