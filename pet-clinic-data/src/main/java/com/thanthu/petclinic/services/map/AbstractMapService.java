@@ -1,4 +1,4 @@
-package com.thanthu.petclinic.model.services.map;
+package com.thanthu.petclinic.services.map;
 
 import java.util.Collections;
 import java.util.HashMap;

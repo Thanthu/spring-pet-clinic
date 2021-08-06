@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 
 import com.thanthu.petclinic.model.Owner;
 import com.thanthu.petclinic.model.Vet;
-import com.thanthu.petclinic.model.services.OwnerService;
-import com.thanthu.petclinic.model.services.VetService;
+import com.thanthu.petclinic.services.OwnerService;
+import com.thanthu.petclinic.services.VetService;
 
 @Component
 public class DataLoader implements CommandLineRunner {

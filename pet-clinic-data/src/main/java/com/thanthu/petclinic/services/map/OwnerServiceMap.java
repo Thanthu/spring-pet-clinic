@@ -1,9 +1,9 @@
-package com.thanthu.petclinic.model.services.map;
+package com.thanthu.petclinic.services.map;
 
 import org.springframework.stereotype.Service;
 
 import com.thanthu.petclinic.model.Owner;
-import com.thanthu.petclinic.model.services.OwnerService;
+import com.thanthu.petclinic.services.OwnerService;
 
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {

@@ -1,4 +1,4 @@
-package com.thanthu.petclinic.model.services;
+package com.thanthu.petclinic.services;
 
 import java.util.Set;
 
