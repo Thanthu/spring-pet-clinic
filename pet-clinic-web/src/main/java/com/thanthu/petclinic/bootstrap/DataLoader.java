@@ -10,10 +10,12 @@ import com.thanthu.petclinic.model.Pet;
 import com.thanthu.petclinic.model.PetType;
 import com.thanthu.petclinic.model.Speciality;
 import com.thanthu.petclinic.model.Vet;
+import com.thanthu.petclinic.model.Visit;
 import com.thanthu.petclinic.services.OwnerService;
 import com.thanthu.petclinic.services.PetTypeService;
 import com.thanthu.petclinic.services.SpecialityService;
 import com.thanthu.petclinic.services.VetService;
+import com.thanthu.petclinic.services.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -22,13 +24,15 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
 	private final SpecialityService specialityService;
+	private final VisitService visitService;
 
 	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-			SpecialityService specialityService) {
+			SpecialityService specialityService, VisitService visitService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialityService = specialityService;
+		this.visitService = visitService;
 	}
 
 	@Override
@@ -90,6 +94,13 @@ public class DataLoader implements CommandLineRunner {
 		owner2.getPets().add(beesPet);
 
 		ownerService.save(owner2);
+		
+		Visit beesPetVisit = new Visit();
+		beesPetVisit.setPet(beesPet);
+		beesPetVisit.setDescription("Low Chakra");
+		beesPetVisit.setDate(LocalDate.now());
+		
+		visitService.save(beesPetVisit);
 
 		System.out.println("Loaded Owners....");
 

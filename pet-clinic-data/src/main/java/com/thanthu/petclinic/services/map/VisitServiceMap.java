@@ -1,8 +1,11 @@
 package com.thanthu.petclinic.services.map;
 
+import org.springframework.stereotype.Service;
+
 import com.thanthu.petclinic.model.Visit;
 import com.thanthu.petclinic.services.VisitService;
 
+@Service
 public class VisitServiceMap extends AbstractMapService<Visit, Long> implements VisitService {
 
 	@Override
