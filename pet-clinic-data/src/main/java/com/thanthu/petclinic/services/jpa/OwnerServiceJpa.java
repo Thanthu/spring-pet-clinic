@@ -22,7 +22,7 @@ public class OwnerServiceJpa implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll() {
-		Set<Owner> owners = new HashSet<>();
+		Set<Owner> owners = new HashSet<Owner>();
 		ownerRepository.findAll().forEach(owners::add);
 		return owners;
 	}
