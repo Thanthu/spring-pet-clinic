@@ -1,5 +1,10 @@
 package com.thanthu.petclinic.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "sepcialities")
 public class Speciality extends BaseEntity {
 	
 	private String description;
