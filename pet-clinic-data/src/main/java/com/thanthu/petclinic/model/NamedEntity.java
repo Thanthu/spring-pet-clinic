@@ -1,5 +1,8 @@
 package com.thanthu.petclinic.model;
 
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class NamedEntity extends BaseEntity {
 
 	private String name;
