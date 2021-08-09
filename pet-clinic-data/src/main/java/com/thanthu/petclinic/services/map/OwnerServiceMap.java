@@ -9,7 +9,7 @@ import com.thanthu.petclinic.services.PetService;
 import com.thanthu.petclinic.services.PetTypeService;
 
 @Service
-@Profile({"default", "map"})
+@Profile({ "default", "map" })
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	private final PetTypeService petTypeService;
@@ -44,8 +44,8 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
 	@Override
 	public Owner findByLastName(String lastName) {
-		// TODO Auto-generated method stub
-		return null;
+		return findAll().stream().filter(owner -> owner.getLastName().equalsIgnoreCase(lastName)).findFirst()
+				.orElse(null);
 	}
 
 }
