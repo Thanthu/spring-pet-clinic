@@ -43,7 +43,9 @@ public class Pet extends NamedEntity {
 		this.birthDate = birthDate;
 		this.petType = petType;
 		this.owner = owner;
-		this.visits = visits;
+		if(visits != null) {
+			this.visits = visits;
+		}
 	}
 
 }
